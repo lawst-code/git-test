@@ -1,0 +1,62 @@
+apiVersion: noxus/v4
+kind: flow
+metadata:
+  description: null
+  id: be6673cb-db2c-42b2-b653-7d3460071d6c
+  labels: {}
+  name: Example flow
+  slug: example-flow-be6673cb
+schemaVersion: 1
+spec:
+  edges:
+  - source: a507aa80-6fda-4505-8644-b025c5894abb
+    source_handle: output
+    target: f69f4f92-6432-4416-a177-a98326d7a243
+    target_handle: input
+  - source: f69f4f92-6432-4416-a177-a98326d7a243
+    source_handle: output
+    target: 70c3436a-d44d-45aa-8bb4-1ab98e42f5f3
+    target_handle: input
+  flow_version: v2
+  nodes:
+  - display:
+      position:
+        x: 690
+        y: 492
+    id: a507aa80-6fda-4505-8644-b025c5894abb
+    name: Input 1
+    node_config:
+      label: Input 1
+    type: InputNodeV2
+    variable_bindings: {}
+  - display:
+      pinned_fields:
+      - prompt_template
+      position:
+        x: 1110
+        y: 492
+    id: f69f4f92-6432-4416-a177-a98326d7a243
+    name: Generate Text
+    node_config:
+      json_fields:
+      - Description: The person's name
+        Name: name
+        Type: Text
+      - Description: The person's age
+        Name: age
+        Type: Integer
+      prompt_template:
+      - 'write a paragraph about :var[a507aa80-6fda-4505-8644-b025c5894abb.output] '
+    type: GenerateTextV4
+    variable_bindings: {}
+  - display:
+      position:
+        x: 1530
+        y: 492
+    id: 70c3436a-d44d-45aa-8bb4-1ab98e42f5f3
+    name: Output 1
+    node_config:
+      label: Output 1
+      value: :var[f69f4f92-6432-4416-a177-a98326d7a243.text_output]
+    type: OutputNodeV2
+    variable_bindings: {}
