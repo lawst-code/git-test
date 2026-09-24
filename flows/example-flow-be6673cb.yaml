@@ -17,6 +17,14 @@ spec:
     source_handle: output
     target: 70c3436a-d44d-45aa-8bb4-1ab98e42f5f3
     target_handle: input
+  - source: f69f4f92-6432-4416-a177-a98326d7a243
+    source_handle: output
+    target: 849d0998-c9fe-4b3a-8c4f-194c76d07d12
+    target_handle: input
+  - source: 849d0998-c9fe-4b3a-8c4f-194c76d07d12
+    source_handle: output
+    target: 084fff4a-2ba9-40b2-aea3-c5f00ebe2174
+    target_handle: input
   flow_version: v2
   nodes:
   - display:
@@ -58,5 +66,28 @@ spec:
     node_config:
       label: Output 1
       value: :var[f69f4f92-6432-4416-a177-a98326d7a243.text_output]
+    type: OutputNodeV2
+    variable_bindings: {}
+  - display:
+      pinned_fields:
+      - template
+      position:
+        x: 1494.4
+        y: 750.6
+    id: 849d0998-c9fe-4b3a-8c4f-194c76d07d12
+    name: Combine Text
+    node_config:
+      template: ':var[f69f4f92-6432-4416-a177-a98326d7a243.text_output] '
+    type: CombineTextV3
+    variable_bindings: {}
+  - display:
+      position:
+        x: 1914.4
+        y: 750.5999755859375
+    id: 084fff4a-2ba9-40b2-aea3-c5f00ebe2174
+    name: Output 2
+    node_config:
+      label: Output 2
+      value: :var[849d0998-c9fe-4b3a-8c4f-194c76d07d12.text_output]
     type: OutputNodeV2
     variable_bindings: {}
