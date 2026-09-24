@@ -1,0 +1,150 @@
+apiVersion: noxus/v4
+kind: agent
+metadata:
+  description: null
+  id: f0c8df04-0551-46f9-a52e-e75485803e81
+  labels: {}
+  name: my new agent
+  slug: my-new-agent-f0c8df04
+schemaVersion: 1
+spec:
+  base_tools:
+  - type: human_in_the_loop
+  - enabled: false
+    type: web_research
+  - type: files
+  - type: memory
+  - type: filesystem
+  - type: code_execution
+  - type: agent_memory
+  - type: documentation
+  - type: todos
+  - type: image_generation
+  - type: sandbox
+  - type: schedule_tool
+  - enabled: false
+    type: subagent
+  - type: code_mode
+  capability_versions:
+    actions: 1
+    agent_memory: 1
+    cache_stability: 1
+    channel: 1
+    code_execution: 1
+    code_mode: 1
+    compaction: 2
+    coworkers: 1
+    create_file: 1
+    csat: 1
+    database: 1
+    documentation: 1
+    docx: 1
+    excel: 1
+    failure_probe: 1
+    file_system: 1
+    generate_image: 1
+    genie: 2
+    guidelines: 1
+    history: 1
+    images: 1
+    instructions: 1
+    instrumentation: 1
+    kb_search: 1
+    mcp: 1
+    memory: 1
+    noxus_settings: 1
+    overflow: 0
+    pdf: 1
+    permissions: 1
+    platform: 1
+    pptx: 1
+    response_language: 1
+    sandbox: 2
+    sandbox_publish: 1
+    schedule: 1
+    skills: 1
+    subagents: 1
+    tabular: 1
+    todos: 1
+    tool_failure_recovery: 1
+    tool_killswitch: 1
+    web_research: 2
+    workflows: 1
+  citation_instructions:
+  - definition:
+      content:
+      - attrs: null
+        content:
+        - attrs: null
+          content: null
+          marks: null
+          text: '- Cite whenever you state something that came from a knowledge base
+            rather than from your own knowledge.'
+          type: text
+        marks: null
+        text: null
+        type: paragraph
+      - attrs: null
+        content:
+        - attrs: null
+          content: null
+          marks: null
+          text: '- Quote the source''s own words, kept short — under 10 words — and
+            prefer paraphrasing in your own words with a citation over long quotations.'
+          type: text
+        marks: null
+        text: null
+        type: paragraph
+      - attrs: null
+        content:
+        - attrs: null
+          content: null
+          marks: null
+          text: '- At most 2 references per paragraph — cite the strongest sources,
+            not every one.'
+          type: text
+        marks: null
+        text: null
+        type: paragraph
+      - attrs: null
+        content:
+        - attrs: null
+          content: null
+          marks: null
+          text: '- Don''t cite general knowledge, your own reasoning, restatements
+            of the user''s question, or conversational filler.'
+          type: text
+        marks: null
+        text: null
+        type: paragraph
+      type: doc
+    text: '- Cite whenever you state something that came from a knowledge base rather
+      than from your own knowledge.
+
+      - Quote the source''s own words, kept short — under 10 words — and prefer paraphrasing
+      in your own words with a citation over long quotations.
+
+      - At most 2 references per paragraph — cite the strongest sources, not every
+      one.
+
+      - Don''t cite general knowledge, your own reasoning, restatements of the user''s
+      question, or conversational filler.'
+  default_language: en
+  extra_instructions:
+  - definition:
+      content: []
+      type: doc
+    text: ''
+  languages:
+  - code: en
+    introductory_message: null
+  persona:
+  - definition:
+      content: []
+      type: doc
+    text: ''
+  tone:
+  - definition:
+      content: []
+      type: doc
+    text: ''

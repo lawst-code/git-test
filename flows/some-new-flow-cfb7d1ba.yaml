@@ -1,0 +1,55 @@
+apiVersion: noxus/v4
+kind: flow
+metadata:
+  description: null
+  id: cfb7d1ba-c7af-474d-9c10-78a317977d1c
+  labels: {}
+  name: Some new flow
+  slug: some-new-flow-cfb7d1ba
+schemaVersion: 1
+spec:
+  edges:
+  - source: 57ac0d29-6893-46a5-b7da-35984303b91b
+    source_handle: output
+    target: d1b5bbe6-e6cb-4a0b-b9af-9530084c62db
+    target_handle: input
+  - source: d1b5bbe6-e6cb-4a0b-b9af-9530084c62db
+    source_handle: output
+    target: 54b665f6-7f53-40c5-aebc-f1c806525a2e
+    target_handle: input
+  flow_version: v2
+  nodes:
+  - display:
+      position:
+        x: 728
+        y: 287
+    id: 57ac0d29-6893-46a5-b7da-35984303b91b
+    name: Input 1
+    node_config:
+      label: Input 1
+    type: InputNodeV2
+    variable_bindings: {}
+  - display:
+      pinned_fields:
+      - request_method
+      - url
+      position:
+        x: 1116.34375
+        y: 287
+    id: d1b5bbe6-e6cb-4a0b-b9af-9530084c62db
+    name: Make API Request
+    node_config:
+      url: https://google.com
+    type: MakeAPIRequestV3
+    variable_bindings: {}
+  - display:
+      position:
+        x: 1536.34375
+        y: 287
+    id: 54b665f6-7f53-40c5-aebc-f1c806525a2e
+    name: Output 1
+    node_config:
+      label: Output 1
+      value: https://google.com
+    type: OutputNodeV2
+    variable_bindings: {}

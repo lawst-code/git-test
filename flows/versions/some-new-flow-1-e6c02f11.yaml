@@ -1,0 +1,124 @@
+apiVersion: noxus/v4
+kind: flow_version
+metadata:
+  description: null
+  id: e6c02f11-062a-4864-9838-bb7076a0e9c6
+  labels: {}
+  name: '1'
+  slug: some-new-flow-1-e6c02f11
+schemaVersion: 1
+spec:
+  definition:
+    edges:
+    - id: 6f578ad7-aeae-4186-ba85-3ef37baf07a4
+      source: 57ac0d29-6893-46a5-b7da-35984303b91b
+      source_handle: output
+      target: d1b5bbe6-e6cb-4a0b-b9af-9530084c62db
+      target_handle: input
+    - id: bda24df5-a6f3-48eb-9017-431ceb9bf6e8
+      source: d1b5bbe6-e6cb-4a0b-b9af-9530084c62db
+      source_handle: output
+      target: 54b665f6-7f53-40c5-aebc-f1c806525a2e
+      target_handle: input
+    flow_version: v2
+    nodes:
+    - display:
+        position:
+          x: 728
+          y: 287
+      id: 57ac0d29-6893-46a5-b7da-35984303b91b
+      name: Input 1
+      node_config:
+        default_on_error_value_string: <ERROR>
+        fallback_text: <ERROR>
+        fixed_value: false
+        has_on_error_output: false
+        is_tool: false
+        label: Input 1
+        mocked: false
+        modifiable_on_run: true
+        on_error_action: fail
+        on_error_behavior: fail
+        optional: false
+        path_values: {}
+        retry_attempts: 3
+        retry_backoff: fixed
+        retry_count: 3
+        retry_delay: 5
+        retry_enabled: false
+        retry_interval: 5
+        retry_strategy: fixed_delay
+        type: str
+      type: InputNodeV2
+      variable_bindings: {}
+    - display:
+        pinned_fields:
+        - request_method
+        - url
+        position:
+          x: 1116.34375
+          y: 287
+      id: d1b5bbe6-e6cb-4a0b-b9af-9530084c62db
+      name: Make API Request
+      node_config:
+        body: ''
+        body_type: json
+        cookies: ''
+        default_on_error_value_string: <ERROR>
+        fail_on_status_code: false
+        fallback_text: <ERROR>
+        file_field_name: file
+        file_upload_mode: multipart
+        has_on_error_output: false
+        headers: ''
+        is_tool: false
+        label: ''
+        mocked: false
+        on_error_action: fail
+        on_error_behavior: fail
+        path_values: {}
+        request_method: POST
+        retry_attempts: 3
+        retry_backoff: fixed
+        retry_count: 3
+        retry_delay: 5
+        retry_enabled: false
+        retry_interval: 5
+        retry_strategy: fixed_delay
+        url: https://google.com
+        use_scrapingbee: false
+        verify_ssl: true
+        whitelisted_domains: []
+      type: MakeAPIRequestV3
+      variable_bindings: {}
+    - display:
+        position:
+          x: 1536.34375
+          y: 287
+      id: 54b665f6-7f53-40c5-aebc-f1c806525a2e
+      name: Output 1
+      node_config:
+        default_on_error_value_string: <ERROR>
+        fallback_text: <ERROR>
+        has_on_error_output: false
+        is_list: false
+        is_tool: false
+        label: Output 1
+        mocked: false
+        on_error_action: fail
+        on_error_behavior: fail
+        path_values: {}
+        retry_attempts: 3
+        retry_backoff: fixed
+        retry_count: 3
+        retry_delay: 5
+        retry_enabled: false
+        retry_interval: 5
+        retry_strategy: fixed_delay
+        type: str
+        value: https://google.com
+      type: OutputNodeV2
+      variable_bindings: {}
+  description: ''
+  name: '1'
+  workflow_id: cfb7d1ba-c7af-474d-9c10-78a317977d1c
