@@ -19,6 +19,6 @@ spec:
     type: AwsS3ListBucketsV2
   - id: out
     node_config:
-      label: Buckets
+      label: Result v2
       value: :var[s3.buckets]
     type: OutputNodeV2
