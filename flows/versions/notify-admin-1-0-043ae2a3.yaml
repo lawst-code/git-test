@@ -1,0 +1,40 @@
+apiVersion: noxus/v4
+kind: flow_version
+metadata:
+  description: null
+  id: 043ae2a3-1196-43d1-8547-356fcc13c405
+  labels: {}
+  name: '1.0'
+  slug: notify-admin-1-0-043ae2a3
+schemaVersion: 1
+spec:
+  definition:
+    edges:
+    - id: e1
+      source: in
+      target: join
+    - id: e2
+      source: join
+      target: out
+    flow_version: v2
+    nodes:
+    - id: in
+      node_config:
+        label: Message
+        type: str
+      type: InputNodeV2
+    - id: join
+      node_config:
+        template: 'To :var[__secrets__.workspace:acf5689c-bfab-4ecf-a007-789dffbf0287]
+          reply-to :var[__secrets__.workspace:06c26d7f-882a-4b67-9507-2d90b46aa1a6]
+          :: :var[in.output]'
+      type: CombineTextV2
+    - id: out
+      node_config:
+        label: Result gl-1794782462
+        type: str
+        value: :var[join.text_output]
+      type: OutputNodeV2
+  description: first version
+  name: '1.0'
+  workflow_id: 73661780-3299-4d63-bceb-8b8db6bf85dc

@@ -1,0 +1,30 @@
+apiVersion: noxus/v4
+kind: flow
+metadata:
+  description: null
+  id: 5a75e128-ae1e-4343-936d-7267b96dccf2
+  labels: {}
+  name: Bulk Flow 010
+  slug: bulk-flow-010-5a75e128
+schemaVersion: 1
+spec:
+  edges:
+  - source: in
+    target: join
+  - source: join
+    target: out
+  flow_version: v2
+  nodes:
+  - id: in
+    node_config:
+      label: Message
+    type: InputNodeV2
+  - id: join
+    node_config:
+      template: 'Bulk flow 10: :var[in.output]'
+    type: CombineTextV2
+  - id: out
+    node_config:
+      label: Result
+      value: :var[join.text_output]
+    type: OutputNodeV2

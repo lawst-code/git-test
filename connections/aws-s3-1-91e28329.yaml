@@ -12,7 +12,7 @@ spec:
   display_name: AWS S3 1
   integration_type: aws_s3
   metadata:
-    last_validated: '2026-11-15T22:00:02.209176'
+    last_validated: '2026-11-15T22:30:02.011360'
     validation_error: 'InvalidClientTokenId: The security token included in the request
       is invalid.'
   provider_key: aws_s3_secret_auth

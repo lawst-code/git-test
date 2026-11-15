@@ -1,0 +1,12 @@
+apiVersion: noxus/v4
+kind: knowledge_base
+metadata:
+  description: null
+  id: ecd5fdb3-3d8f-40d9-968f-100868acc82d
+  labels: {}
+  name: Sales Playbook
+  slug: sales-playbook-ecd5fdb3
+schemaVersion: 1
+spec:
+  embedding_model:
+  - vertexai/gemini-embedding-001

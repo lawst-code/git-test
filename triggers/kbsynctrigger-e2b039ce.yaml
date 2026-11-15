@@ -1,0 +1,41 @@
+apiVersion: noxus/v4
+kind: trigger
+metadata:
+  description: null
+  id: e2b039ce-4833-476d-a83e-e9c7dd6ee4e6
+  labels: {}
+  name: KBSyncTrigger
+  slug: kbsynctrigger-e2b039ce
+schemaVersion: 1
+spec:
+  assistant_id: null
+  definition:
+    cron: 0 0 * * *
+    delete_on_source_removal: true
+    input_map: {}
+    kb_id: ecd5fdb3-3d8f-40d9-968f-100868acc82d
+    polling_interval: 300.0
+    resource_label: example.com
+    schedule:
+      action: daily
+      cron_expression: ''
+      day_of_month: 1
+      days_of_week: []
+      interval_unit: minutes
+      interval_value: 30
+      times:
+      - 00:00
+    source_type: Website
+    trigger_id: e2b039ce-4833-476d-a83e-e9c7dd6ee4e6
+    watched_items:
+    - drive_id: null
+      id: https://example.com
+      kb_doc_id: null
+      name: example.com
+      type: url
+  kb_id: ecd5fdb3-3d8f-40d9-968f-100868acc82d
+  min_interval: 60.0
+  routing_key: kb_sync.ecd5fdb3-3d8f-40d9-968f-100868acc82d.e2b039ce-4833-476d-a83e-e9c7dd6ee4e6
+  trigger_flow_type: kb_sync
+  type: KBSyncTrigger
+  workflow_id: null

@@ -1,0 +1,974 @@
+apiVersion: noxus/v4
+kind: agent_version
+metadata:
+  description: null
+  id: 2f7e1261-d69c-4ef4-9a40-e0f5b227276c
+  labels: {}
+  name: '1.0'
+  slug: support-agent-1-0-2f7e1261
+schemaVersion: 1
+spec:
+  assistant_id: 343af68e-9a1a-4744-a918-d6c5c98687d6
+  definition:
+    actions: []
+    agent_files: []
+    agent_title_mode: generate
+    agent_title_prompt: ''
+    auto_model_pick: false
+    auto_model_preference: cost
+    base_tools:
+    - bg_color: blue.50
+      category: QuickAction
+      deprecated: false
+      description: Human in the Loop
+      enabled: false
+      extra_instructions: null
+      handover_message: You are now talking to the co-worker.
+      has_timeout: false
+      icon: PersonStanding
+      icon_color: blue.500
+      requires_approval: false
+      timeout: null
+      title: Human in the Loop
+      tool_display_icon: PersonStanding
+      tool_display_message_end: Escalated to human operator
+      tool_display_message_start: Escalating to human operator...
+      type: human_in_the_loop
+      visible: true
+    - bg_color: '#D1FADF'
+      category: QuickAction
+      deprecated: false
+      description: Search the web for information
+      enabled: false
+      extra_instructions: null
+      icon: Globe
+      icon_color: '#027A48'
+      requires_approval: false
+      title: Web Research
+      tool_display_icon: Globe
+      tool_display_message_end: Searched the web
+      tool_display_message_start: Searching the web...
+      type: web_research
+      visible: true
+    - allow_html_graphs: true
+      author_name: ''
+      bg_color: '#EFF6FF'
+      category: QuickAction
+      custom_author_name: false
+      deprecated: false
+      description: Attach, generate, and work with files.
+      enable_formula_eval: false
+      enable_python_sandbox: false
+      enabled: false
+      experimental: false
+      extra_instructions: null
+      icon: Files
+      icon_color: '#2B7FFF'
+      requires_approval: false
+      show_inline: true
+      title: Files
+      tool_display_icon: Files
+      tool_display_message_end: Done
+      tool_display_message_start: Working with files...
+      type: files
+      visible: true
+    - bg_color: '#f5f3ff'
+      category: QuickAction
+      deprecated: false
+      description: Persistent memory during a single conversation
+      enabled: false
+      extra_instructions: null
+      icon: Brain
+      icon_color: '#8e51ff'
+      requires_approval: false
+      title: Memory
+      tool_display_icon: Brain
+      tool_display_message_end: Memory operation complete
+      tool_display_message_start: Accessing memory...
+      type: memory
+      visible: true
+    - bg_color: '#fef3c7'
+      category: QuickAction
+      deprecated: false
+      description: Access and read files in the current session
+      enabled: true
+      extra_instructions: null
+      icon: FolderOpen
+      icon_color: '#f59e0b'
+      requires_approval: false
+      title: File System
+      tool_display_icon: FolderOpen
+      tool_display_message_end: File system operation complete
+      tool_display_message_start: Accessing file system...
+      type: filesystem
+      visible: false
+    - bg_color: '#fef9c3'
+      category: QuickAction
+      deprecated: false
+      description: Run Python code in a sandboxed environment
+      enabled: false
+      extra_instructions: null
+      icon: Terminal
+      icon_color: '#ca8a04'
+      requires_approval: false
+      timeout: 60
+      title: Code Execution
+      tool_display_icon: Terminal
+      tool_display_message_end: Code executed
+      tool_display_message_start: Running code...
+      type: code_execution
+      visible: true
+    - bg_color: '#fef3c7'
+      category: QuickAction
+      deprecated: false
+      description: Persistent memory across all conversations
+      enabled: false
+      extra_instructions: null
+      icon: BookOpen
+      icon_color: '#d97706'
+      requires_approval: false
+      title: Agent Memory
+      tool_display_icon: BookOpen
+      tool_display_message_end: Memory operation complete
+      tool_display_message_start: Accessing agent memory...
+      type: agent_memory
+      visible: false
+    - bg_color: '#EFF6FF'
+      category: QuickAction
+      deprecated: false
+      description: Search and read Noxus platform documentation
+      enabled: false
+      extra_instructions: null
+      icon: BookOpen
+      icon_color: '#2B7FFF'
+      requires_approval: false
+      title: Documentation
+      tool_display_icon: BookOpen
+      tool_display_message_end: Documentation found
+      tool_display_message_start: Searching documentation...
+      type: documentation
+      visible: true
+    - bg_color: '#f0fdf4'
+      category: QuickAction
+      deprecated: false
+      description: Track and manage tasks during the conversation
+      enable_subtasks: false
+      enabled: false
+      extra_instructions: null
+      icon: ListTodo
+      icon_color: '#16a34a'
+      requires_approval: false
+      title: Task Tracking
+      tool_display_icon: ListTodo
+      tool_display_message_end: Tasks updated
+      tool_display_message_start: Managing tasks...
+      type: todos
+      visible: true
+    - bg_color: '#FDF4FF'
+      category: QuickAction
+      deprecated: false
+      description: Generate images from text prompts, shown inline in the chat.
+      enabled: false
+      extra_instructions: null
+      icon: ImagePlus
+      icon_color: '#C026D3'
+      requires_approval: false
+      title: Image Generation
+      tool_display_icon: ImagePlus
+      tool_display_message_end: Image generated
+      tool_display_message_start: Generating image...
+      type: image_generation
+      visible: true
+    - bg_color: '#fef2f2'
+      category: QuickAction
+      deprecated: false
+      description: 'Internal: makes the agent''s tool call fail on purpose, to exercise
+        tool-failure handling'
+      enabled: false
+      extra_instructions: null
+      icon: Bug
+      icon_color: '#e7000b'
+      requires_approval: false
+      title: Failure probe
+      tool_display_icon: Bug
+      tool_display_message_end: Failure probe complete
+      tool_display_message_start: Failing on purpose...
+      type: failure_probe
+      visible: true
+    - bg_color: '#fef3c7'
+      category: QuickAction
+      deprecated: false
+      description: File operations and command execution in isolated sandbox
+      enabled: false
+      execution_slots: 4
+      extra_instructions: null
+      icon: Terminal
+      icon_color: '#d97706'
+      include_execute: true
+      persistent: false
+      require_execute_approval: false
+      require_write_approval: false
+      requires_approval: false
+      title: Sandbox
+      tool_display_icon: Terminal
+      tool_display_message_end: Command complete
+      tool_display_message_start: Working in sandbox...
+      type: sandbox
+      visible: true
+    - bg_color: '#eff6ff'
+      category: QuickAction
+      deprecated: false
+      description: Create periodic tasks that call this agent on a schedule
+      enabled: false
+      extra_instructions: null
+      icon: Clock
+      icon_color: '#2563eb'
+      requires_approval: false
+      title: Periodic Tasks
+      tool_display_icon: Clock
+      tool_display_message_end: Schedule updated
+      tool_display_message_start: Managing schedule...
+      type: schedule_tool
+      visible: true
+    - bg_color: '#f0f9ff'
+      category: QuickAction
+      deprecated: false
+      description: Delegate tasks to specialized subagents
+      enabled: false
+      extra_instructions: null
+      icon: Users
+      icon_color: '#0284c7'
+      requires_approval: false
+      subagents: []
+      title: Task Delegation
+      tool_display_icon: Users
+      tool_display_message_end: Task delegated
+      tool_display_message_start: Delegating task...
+      type: subagent
+      visible: false
+    - bg_color: '#ede9fe'
+      category: QuickAction
+      deprecated: false
+      description: Call platform tools from one Python script instead of one call
+        per turn
+      enabled: false
+      extra_instructions: null
+      icon: Terminal
+      icon_color: '#7c3aed'
+      requires_approval: false
+      title: Code Mode
+      tool_display_icon: Terminal
+      tool_display_message_end: Code executed
+      tool_display_message_start: Running orchestration code...
+      type: code_mode
+      visible: true
+    - bg_color: '#EFF6FF'
+      bias:
+        context: ''
+        value: 'Off'
+      block_after_violations: 0
+      block_message: This conversation has been locked due to repeated safety violations.
+        Please start a new conversation.
+      category: QuickAction
+      context_leak: false
+      crime:
+        context: ''
+        value: 'Off'
+      decision_engine_banner: ''
+      decision_model: []
+      deprecated: false
+      description: Content scanning, prompt defense and blocking
+      divider1: ''
+      divider2: ''
+      divider3: ''
+      enabled: false
+      extra_instructions: null
+      guardrail_action:
+        label: Fail/block run
+        value: fail
+      guardrail_action_human: ''
+      guardrail_action_replace: ''
+      guardrail_engine: llm
+      guardrail_info: ''
+      guardrail_latency_banner: ''
+      guardrail_lock: false
+      guardrail_timing: before
+      guardrails_output_mode: post_stream
+      guardrails_scan_output: false
+      guns_and_weapons:
+        context: ''
+        value: 'Off'
+      icon: Shield
+      icon_color: '#2B7FFF'
+      jailbreak: false
+      pii_anonimization:
+      - label: Name
+        value: PERSON
+      - label: Email
+        value: EMAIL_ADDRESS
+      - label: Phone Number
+        value: PHONE_NUMBER
+      - label: Credit Card
+        value: CREDIT_CARD
+      pii_banner: ''
+      pii_info: ''
+      pii_lock: false
+      profanity:
+        context: ''
+        value: 'Off'
+      prompt_defense: ''
+      prompt_injection: false
+      prompt_lock: false
+      requires_approval: false
+      scan_tool_results: false
+      section_attacks: ''
+      section_content: ''
+      section_engine: ''
+      section_happens: ''
+      section_where: ''
+      settings_display: dialog
+      sexual_content:
+        context: ''
+        value: 'Off'
+      suicide:
+        context: ''
+        value: 'Off'
+      title: Safety & Guardrails
+      tool_display_icon: Shield
+      tool_display_message_end: Tool complete
+      tool_display_message_start: Running tool...
+      toxicity:
+        context: ''
+        value: 'Off'
+      type: guardrails
+      violence_and_hate:
+        context: ''
+        value: 'Off'
+      visible: true
+    basic_params_section: ''
+    bias:
+      context: ''
+      value: 'Off'
+    block_after_violations: 0
+    block_message: This conversation has been locked due to repeated safety violations.
+      Please start a new conversation.
+    capability_versions:
+      actions: 1
+      agent_memory: 1
+      ask_user: 0
+      cache_stability: 1
+      channel: 1
+      code_execution: 1
+      code_mode: 0
+      compaction: 2
+      coworkers: 1
+      create_file: 4
+      csat: 1
+      database: 1
+      document_mentions: 1
+      documentation: 1
+      docx: 2
+      excel: 2
+      failure_probe: 1
+      file_system: 2
+      generate_image: 1
+      genie: 6
+      guardrails: 2
+      guidelines: 1
+      history: 1
+      images: 1
+      instructions: 1
+      instrumentation: 1
+      kb_search: 3
+      mcp: 2
+      memory: 1
+      noxus_settings: 1
+      overflow: 0
+      pdf: 2
+      permissions: 1
+      platform: 2
+      pptx: 2
+      request_shape: 1
+      response_language: 1
+      sandbox: 2
+      sandbox_publish: 1
+      schedule: 1
+      skills: 3
+      subagents: 1
+      support_report: 0
+      tabular: 2
+      todos: 1
+      tool_failure_recovery: 1
+      tool_killswitch: 1
+      web_research: 2
+      workflows: 1
+    chain_of_thought_final_answer_only: false
+    chat_input_placeholder: Ask me anything...
+    citation_instructions:
+    - definition:
+        content:
+        - attrs: null
+          content:
+          - attrs: null
+            content: null
+            marks: null
+            text: '- Cite whenever you state something that came from a knowledge
+              base rather than from your own knowledge.'
+            type: text
+          marks: null
+          text: null
+          type: paragraph
+        - attrs: null
+          content:
+          - attrs: null
+            content: null
+            marks: null
+            text: '- Quote the source''s own words, kept short — under 10 words —
+              and prefer paraphrasing in your own words with a citation over long
+              quotations.'
+            type: text
+          marks: null
+          text: null
+          type: paragraph
+        - attrs: null
+          content:
+          - attrs: null
+            content: null
+            marks: null
+            text: '- At most 2 references per paragraph — cite the strongest sources,
+              not every one.'
+            type: text
+          marks: null
+          text: null
+          type: paragraph
+        - attrs: null
+          content:
+          - attrs: null
+            content: null
+            marks: null
+            text: '- Don''t cite general knowledge, your own reasoning, restatements
+              of the user''s question, or conversational filler.'
+            type: text
+          marks: null
+          text: null
+          type: paragraph
+        type: doc
+      text: '- Cite whenever you state something that came from a knowledge base rather
+        than from your own knowledge.
+
+        - Quote the source''s own words, kept short — under 10 words — and prefer
+        paraphrasing in your own words with a citation over long quotations.
+
+        - At most 2 references per paragraph — cite the strongest sources, not every
+        one.
+
+        - Don''t cite general knowledge, your own reasoning, restatements of the user''s
+        question, or conversational filler.'
+    citation_instructions_enabled: false
+    citation_style: text
+    compaction_enabled: true
+    compaction_strategy: auto
+    compaction_threshold: 0.75
+    compaction_tool_enabled: false
+    context_leak: false
+    conversation_title_section: ''
+    convert_unsupported_files_to_text: true
+    coworkers: []
+    crime:
+      context: ''
+      value: 'Off'
+    databases: []
+    datacenter_fallback: true
+    deduplicate_sources_by_url: false
+    default_language: en
+    deployment_custom_instructions: null
+    divider: ''
+    divider1: ''
+    divider2: ''
+    divider3: ''
+    divider_11: ''
+    divider_7: ''
+    divider_8: ''
+    divider_conversation_title: ''
+    divider_visuals: ''
+    enable_prompt_caching: true
+    enable_reasoning: true
+    exclude_user_identity_from_prompt: false
+    extra_instructions:
+    - definition:
+        content: []
+        type: doc
+      text: ''
+    feedback_cancel_label: Cancel
+    feedback_placeholder: Add details (optional)
+    feedback_section: ''
+    feedback_submit_label: Submit
+    frequency_penalty: 0.6
+    glossary: []
+    group_into_chain_of_thought: true
+    guardrail_action:
+      label: Fail/block run
+      value: fail
+    guardrail_action_human: ''
+    guardrail_action_replace: ''
+    guardrail_info: ''
+    guardrail_latency_banner: ''
+    guardrail_lock: false
+    guardrails_output_mode: post_stream
+    guardrails_scan_output: false
+    guidelines: []
+    guidelines_enabled: false
+    guns_and_weapons:
+      context: ''
+      value: 'Off'
+    hidden_tools:
+    - todos_read_todos
+    - todos_add_todo
+    - todos_write_todos
+    - todos_update_todo_status
+    - todos_remove_todo
+    hide_error_banners: true
+    hide_reasoning: false
+    hide_workflow_progress: false
+    insights_csat_agent_tool_enabled: false
+    insights_csat_agent_tool_instructions: ''
+    insights_csat_auto_enabled: false
+    insights_csat_auto_min_messages: 2
+    insights_csat_enabled: false
+    insights_csat_sampling_rate: 1.0
+    insights_custom_definitions: []
+    insights_enabled: false
+    intro: ''
+    is_coworker: true
+    jailbreak: false
+    knowledge_bases: []
+    languages:
+    - code: en
+      introductory_message: null
+    max_retries_per_model: 3
+    max_tokens: 64000
+    mcp_servers: []
+    memories: []
+    message_footer: null
+    message_footer_enabled: false
+    minimal_caret_only: true
+    minimal_tool_message: Thinking...
+    model:
+    - preset:cost
+    multi_kb_search: false
+    omit_citation_quotes: false
+    parallel_tool_calls: true
+    parameter_preset: default
+    penalty_section: ''
+    persona:
+    - definition:
+        content: []
+        type: doc
+      text: ''
+    pii_anonimization:
+    - label: Name
+      value: PERSON
+    - label: Email
+      value: EMAIL_ADDRESS
+    - label: Phone Number
+      value: PHONE_NUMBER
+    - label: Credit Card
+      value: CREDIT_CARD
+    pii_banner: ''
+    pii_info: ''
+    pii_lock: false
+    presence_penalty: 0.3
+    preset_selector: null
+    profanity:
+      context: ''
+      value: 'Off'
+    prompt_defense: ''
+    prompt_injection: false
+    prompt_lock: false
+    protect_instructions_in_preview: false
+    reasoning_effort: Low
+    reasoning_section: ''
+    reliability_section: ''
+    retry_on_status_codes:
+    - 429
+    - 500
+    - 502
+    - 503
+    - 504
+    sexual_content:
+      context: ''
+      value: 'Off'
+    show_source_images: false
+    skills: []
+    stop_sequences: []
+    subagents: []
+    subagents_enabled: false
+    suicide:
+      context: ''
+      value: 'Off'
+    tables: []
+    temperature: 0.7
+    timeout: 120.0
+    tone:
+    - definition:
+        content: []
+        type: doc
+      text: ''
+    tool_calling_section: ''
+    tool_display_preset: execution
+    tool_grant_scope: workspace
+    tool_timeout: 15.0
+    tools:
+    - bg_color: blue.50
+      category: QuickAction
+      deprecated: false
+      description: Human in the Loop
+      enabled: false
+      extra_instructions: null
+      handover_message: You are now talking to the co-worker.
+      has_timeout: false
+      icon: PersonStanding
+      icon_color: blue.500
+      requires_approval: false
+      timeout: null
+      title: Human in the Loop
+      tool_display_icon: PersonStanding
+      tool_display_message_end: Escalated to human operator
+      tool_display_message_start: Escalating to human operator...
+      type: human_in_the_loop
+      visible: true
+    - bg_color: '#D1FADF'
+      category: QuickAction
+      deprecated: false
+      description: Search the web for information
+      enabled: false
+      extra_instructions: null
+      icon: Globe
+      icon_color: '#027A48'
+      requires_approval: false
+      title: Web Research
+      tool_display_icon: Globe
+      tool_display_message_end: Searched the web
+      tool_display_message_start: Searching the web...
+      type: web_research
+      visible: true
+    - allow_html_graphs: true
+      author_name: ''
+      bg_color: '#EFF6FF'
+      category: QuickAction
+      custom_author_name: false
+      deprecated: false
+      description: Attach, generate, and work with files.
+      enable_formula_eval: false
+      enable_python_sandbox: false
+      enabled: false
+      experimental: false
+      extra_instructions: null
+      icon: Files
+      icon_color: '#2B7FFF'
+      requires_approval: false
+      show_inline: true
+      title: Files
+      tool_display_icon: Files
+      tool_display_message_end: Done
+      tool_display_message_start: Working with files...
+      type: files
+      visible: true
+    - bg_color: '#f5f3ff'
+      category: QuickAction
+      deprecated: false
+      description: Persistent memory during a single conversation
+      enabled: false
+      extra_instructions: null
+      icon: Brain
+      icon_color: '#8e51ff'
+      requires_approval: false
+      title: Memory
+      tool_display_icon: Brain
+      tool_display_message_end: Memory operation complete
+      tool_display_message_start: Accessing memory...
+      type: memory
+      visible: true
+    - bg_color: '#fef3c7'
+      category: QuickAction
+      deprecated: false
+      description: Access and read files in the current session
+      enabled: true
+      extra_instructions: null
+      icon: FolderOpen
+      icon_color: '#f59e0b'
+      requires_approval: false
+      title: File System
+      tool_display_icon: FolderOpen
+      tool_display_message_end: File system operation complete
+      tool_display_message_start: Accessing file system...
+      type: filesystem
+      visible: false
+    - bg_color: '#fef9c3'
+      category: QuickAction
+      deprecated: false
+      description: Run Python code in a sandboxed environment
+      enabled: false
+      extra_instructions: null
+      icon: Terminal
+      icon_color: '#ca8a04'
+      requires_approval: false
+      timeout: 60
+      title: Code Execution
+      tool_display_icon: Terminal
+      tool_display_message_end: Code executed
+      tool_display_message_start: Running code...
+      type: code_execution
+      visible: true
+    - bg_color: '#fef3c7'
+      category: QuickAction
+      deprecated: false
+      description: Persistent memory across all conversations
+      enabled: false
+      extra_instructions: null
+      icon: BookOpen
+      icon_color: '#d97706'
+      requires_approval: false
+      title: Agent Memory
+      tool_display_icon: BookOpen
+      tool_display_message_end: Memory operation complete
+      tool_display_message_start: Accessing agent memory...
+      type: agent_memory
+      visible: false
+    - bg_color: '#EFF6FF'
+      category: QuickAction
+      deprecated: false
+      description: Search and read Noxus platform documentation
+      enabled: false
+      extra_instructions: null
+      icon: BookOpen
+      icon_color: '#2B7FFF'
+      requires_approval: false
+      title: Documentation
+      tool_display_icon: BookOpen
+      tool_display_message_end: Documentation found
+      tool_display_message_start: Searching documentation...
+      type: documentation
+      visible: true
+    - bg_color: '#f0fdf4'
+      category: QuickAction
+      deprecated: false
+      description: Track and manage tasks during the conversation
+      enable_subtasks: false
+      enabled: false
+      extra_instructions: null
+      icon: ListTodo
+      icon_color: '#16a34a'
+      requires_approval: false
+      title: Task Tracking
+      tool_display_icon: ListTodo
+      tool_display_message_end: Tasks updated
+      tool_display_message_start: Managing tasks...
+      type: todos
+      visible: true
+    - bg_color: '#FDF4FF'
+      category: QuickAction
+      deprecated: false
+      description: Generate images from text prompts, shown inline in the chat.
+      enabled: false
+      extra_instructions: null
+      icon: ImagePlus
+      icon_color: '#C026D3'
+      requires_approval: false
+      title: Image Generation
+      tool_display_icon: ImagePlus
+      tool_display_message_end: Image generated
+      tool_display_message_start: Generating image...
+      type: image_generation
+      visible: true
+    - bg_color: '#fef2f2'
+      category: QuickAction
+      deprecated: false
+      description: 'Internal: makes the agent''s tool call fail on purpose, to exercise
+        tool-failure handling'
+      enabled: false
+      extra_instructions: null
+      icon: Bug
+      icon_color: '#e7000b'
+      requires_approval: false
+      title: Failure probe
+      tool_display_icon: Bug
+      tool_display_message_end: Failure probe complete
+      tool_display_message_start: Failing on purpose...
+      type: failure_probe
+      visible: true
+    - bg_color: '#fef3c7'
+      category: QuickAction
+      deprecated: false
+      description: File operations and command execution in isolated sandbox
+      enabled: false
+      execution_slots: 4
+      extra_instructions: null
+      icon: Terminal
+      icon_color: '#d97706'
+      include_execute: true
+      persistent: false
+      require_execute_approval: false
+      require_write_approval: false
+      requires_approval: false
+      title: Sandbox
+      tool_display_icon: Terminal
+      tool_display_message_end: Command complete
+      tool_display_message_start: Working in sandbox...
+      type: sandbox
+      visible: true
+    - bg_color: '#eff6ff'
+      category: QuickAction
+      deprecated: false
+      description: Create periodic tasks that call this agent on a schedule
+      enabled: false
+      extra_instructions: null
+      icon: Clock
+      icon_color: '#2563eb'
+      requires_approval: false
+      title: Periodic Tasks
+      tool_display_icon: Clock
+      tool_display_message_end: Schedule updated
+      tool_display_message_start: Managing schedule...
+      type: schedule_tool
+      visible: true
+    - bg_color: '#f0f9ff'
+      category: QuickAction
+      deprecated: false
+      description: Delegate tasks to specialized subagents
+      enabled: false
+      extra_instructions: null
+      icon: Users
+      icon_color: '#0284c7'
+      requires_approval: false
+      subagents: []
+      title: Task Delegation
+      tool_display_icon: Users
+      tool_display_message_end: Task delegated
+      tool_display_message_start: Delegating task...
+      type: subagent
+      visible: false
+    - bg_color: '#ede9fe'
+      category: QuickAction
+      deprecated: false
+      description: Call platform tools from one Python script instead of one call
+        per turn
+      enabled: false
+      extra_instructions: null
+      icon: Terminal
+      icon_color: '#7c3aed'
+      requires_approval: false
+      title: Code Mode
+      tool_display_icon: Terminal
+      tool_display_message_end: Code executed
+      tool_display_message_start: Running orchestration code...
+      type: code_mode
+      visible: true
+    - bg_color: '#EFF6FF'
+      bias:
+        context: ''
+        value: 'Off'
+      block_after_violations: 0
+      block_message: This conversation has been locked due to repeated safety violations.
+        Please start a new conversation.
+      category: QuickAction
+      context_leak: false
+      crime:
+        context: ''
+        value: 'Off'
+      decision_engine_banner: ''
+      decision_model: []
+      deprecated: false
+      description: Content scanning, prompt defense and blocking
+      divider1: ''
+      divider2: ''
+      divider3: ''
+      enabled: false
+      extra_instructions: null
+      guardrail_action:
+        label: Fail/block run
+        value: fail
+      guardrail_action_human: ''
+      guardrail_action_replace: ''
+      guardrail_engine: llm
+      guardrail_info: ''
+      guardrail_latency_banner: ''
+      guardrail_lock: false
+      guardrail_timing: before
+      guardrails_output_mode: post_stream
+      guardrails_scan_output: false
+      guns_and_weapons:
+        context: ''
+        value: 'Off'
+      icon: Shield
+      icon_color: '#2B7FFF'
+      jailbreak: false
+      pii_anonimization:
+      - label: Name
+        value: PERSON
+      - label: Email
+        value: EMAIL_ADDRESS
+      - label: Phone Number
+        value: PHONE_NUMBER
+      - label: Credit Card
+        value: CREDIT_CARD
+      pii_banner: ''
+      pii_info: ''
+      pii_lock: false
+      profanity:
+        context: ''
+        value: 'Off'
+      prompt_defense: ''
+      prompt_injection: false
+      prompt_lock: false
+      requires_approval: false
+      scan_tool_results: false
+      section_attacks: ''
+      section_content: ''
+      section_engine: ''
+      section_happens: ''
+      section_where: ''
+      settings_display: dialog
+      sexual_content:
+        context: ''
+        value: 'Off'
+      suicide:
+        context: ''
+        value: 'Off'
+      title: Safety & Guardrails
+      tool_display_icon: Shield
+      tool_display_message_end: Tool complete
+      tool_display_message_start: Running tool...
+      toxicity:
+        context: ''
+        value: 'Off'
+      type: guardrails
+      violence_and_hate:
+        context: ''
+        value: 'Off'
+      visible: true
+    top_k: 40
+    top_p: 1.0
+    toxicity:
+      context: ''
+      value: 'Off'
+    transport_allow_noop: false
+    transport_show_sources: true
+    transport_show_thinking: false
+    transport_show_tool_calls: false
+    transport_thinking_text: ''
+    usage_limits_agent_timeout: 120
+    usage_limits_max_messages: 100
+    usage_limits_maximum_request: 1000
+    usage_limits_maximum_tokens: 2000000
+    usage_limits_section: ''
+    variables: []
+    variables_enabled: false
+    violence_and_hate:
+      context: ''
+      value: 'Off'
+    visuals_section: ''
+    workflows: []
+    workflows_parallel_enabled: false
+  description: first version
+  name: '1.0'
