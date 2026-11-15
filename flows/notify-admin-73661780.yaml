@@ -27,6 +27,6 @@ spec:
     type: CombineTextV2
   - id: out
     node_config:
-      label: Result
+      label: Result v2
       value: :var[join.text_output]
     type: OutputNodeV2
