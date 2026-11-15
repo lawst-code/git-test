@@ -1,0 +1,10 @@
+apiVersion: noxus/v4
+exportOptions:
+  setActiveOnImport: false
+kind: Bundle
+metadata:
+  exportedAt: null
+  exportedBy: null
+  noxusVersion: null
+  sourceWorkspace: GitOps Source
+  sourceWorkspaceId: 0ec1fa68-db29-4b45-bff8-3c5458da71cb

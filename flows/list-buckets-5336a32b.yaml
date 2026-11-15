@@ -1,0 +1,24 @@
+apiVersion: noxus/v4
+kind: flow
+metadata:
+  description: null
+  id: 5336a32b-b0fa-4897-9435-a191f6d97b97
+  labels: {}
+  name: List Buckets
+  slug: list-buckets-5336a32b
+schemaVersion: 1
+spec:
+  edges:
+  - source: s3
+    target: out
+  flow_version: v2
+  nodes:
+  - id: s3
+    node_config:
+      connection: 91e28329-59d9-4f7c-8e32-f2937b6f7ada
+    type: AwsS3ListBucketsV2
+  - id: out
+    node_config:
+      label: Buckets
+      value: :var[s3.buckets]
+    type: OutputNodeV2

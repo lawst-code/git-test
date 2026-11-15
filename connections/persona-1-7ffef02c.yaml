@@ -1,0 +1,16 @@
+apiVersion: noxus/v4
+kind: connection
+metadata:
+  description: null
+  id: 7ffef02c-8586-40e3-baec-6a1ba14f7a2e
+  labels: {}
+  name: Persona 1
+  slug: persona-1-7ffef02c
+schemaVersion: 1
+spec:
+  auth_method: secret_auth
+  display_name: Persona 1
+  integration_type: persona
+  metadata:
+    last_validated: '2026-11-15T22:00:01.910317'
+  provider_key: persona_secret_auth

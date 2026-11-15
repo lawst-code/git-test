@@ -1,0 +1,31 @@
+apiVersion: noxus/v4
+kind: flow
+metadata:
+  description: null
+  id: 73661780-3299-4d63-bceb-8b8db6bf85dc
+  labels: {}
+  name: Notify Admin
+  slug: notify-admin-73661780
+schemaVersion: 1
+spec:
+  edges:
+  - source: in
+    target: join
+  - source: join
+    target: out
+  flow_version: v2
+  nodes:
+  - id: in
+    node_config:
+      label: Message
+    type: InputNodeV2
+  - id: join
+    node_config:
+      template: 'To :var[__secrets__.workspace:acf5689c-bfab-4ecf-a007-789dffbf0287]
+        :: :var[in.output]'
+    type: CombineTextV2
+  - id: out
+    node_config:
+      label: Result
+      value: :var[join.text_output]
+    type: OutputNodeV2

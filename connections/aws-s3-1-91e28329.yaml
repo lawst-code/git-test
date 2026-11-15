@@ -1,0 +1,18 @@
+apiVersion: noxus/v4
+kind: connection
+metadata:
+  description: null
+  id: 91e28329-59d9-4f7c-8e32-f2937b6f7ada
+  labels: {}
+  name: AWS S3 1
+  slug: aws-s3-1-91e28329
+schemaVersion: 1
+spec:
+  auth_method: secret_auth
+  display_name: AWS S3 1
+  integration_type: aws_s3
+  metadata:
+    last_validated: '2026-11-15T22:00:02.209176'
+    validation_error: 'InvalidClientTokenId: The security token included in the request
+      is invalid.'
+  provider_key: aws_s3_secret_auth
