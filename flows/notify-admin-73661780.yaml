@@ -22,6 +22,7 @@ spec:
   - id: join
     node_config:
       template: 'To :var[__secrets__.workspace:acf5689c-bfab-4ecf-a007-789dffbf0287]
+        reply-to :var[__secrets__.workspace:06c26d7f-882a-4b67-9507-2d90b46aa1a6]
         :: :var[in.output]'
     type: CombineTextV2
   - id: out
