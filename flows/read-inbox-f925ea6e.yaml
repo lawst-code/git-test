@@ -1,0 +1,25 @@
+apiVersion: noxus/v4
+kind: flow
+metadata:
+  description: null
+  id: f925ea6e-1e6e-4fac-8a57-2d33854a4cc6
+  labels: {}
+  name: Read Inbox
+  slug: read-inbox-f925ea6e
+schemaVersion: 1
+spec:
+  edges:
+  - source: mail
+    target: out
+  flow_version: v2
+  nodes:
+  - id: mail
+    node_config:
+      connection: d62caa3b-b46b-473b-a6c9-1aab145f08a4
+      read_count: 1
+    type: GmailReadEmailsV5
+  - id: out
+    node_config:
+      label: Latest mail
+      value: :var[mail.subject]
+    type: OutputNodeV2
