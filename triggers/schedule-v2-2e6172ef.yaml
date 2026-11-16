@@ -1,0 +1,24 @@
+apiVersion: noxus/v4
+kind: trigger
+metadata:
+  description: null
+  id: 2e6172ef-9e6a-4c92-80a1-6aef140f03e9
+  labels: {}
+  name: schedule_v2
+  slug: schedule-v2-2e6172ef
+schemaVersion: 1
+spec:
+  assistant_id: null
+  definition:
+    action: cron_expression
+    cron: 0 0 1 1 *
+    cron_expression: 0 0 1 1 *
+    routing_key: 2e6172ef-9e6a-4c92-80a1-6aef140f03e9
+    type: schedule_v2
+    uid: 2e6172ef-9e6a-4c92-80a1-6aef140f03e9
+  kb_id: null
+  min_interval: null
+  routing_key: 2e6172ef-9e6a-4c92-80a1-6aef140f03e9
+  trigger_flow_type: workflow
+  type: schedule_v2
+  workflow_id: 73661780-3299-4d63-bceb-8b8db6bf85dc

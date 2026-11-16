@@ -26,6 +26,6 @@ spec:
     type: CombineTextV2
   - id: out
     node_config:
-      label: Result gl-1794782462
+      label: Result for :var[__secrets__.workspace:af048396-3ef8-4658-beba-b4c4c94f394e]
       value: :var[join.text_output]
     type: OutputNodeV2

@@ -12,5 +12,5 @@ spec:
   display_name: Persona 1
   integration_type: persona
   metadata:
-    last_validated: '2026-11-15T22:30:01.605988'
+    last_validated: '2026-11-16T17:02:04.526226'
   provider_key: persona_secret_auth
