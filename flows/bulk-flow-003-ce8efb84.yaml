@@ -15,15 +15,27 @@ spec:
     target: out
   flow_version: v2
   nodes:
-  - id: in
+  - display:
+      position:
+        x: 120
+        y: 160
+    id: in
     node_config:
       label: Message
     type: InputNodeV2
-  - id: join
+  - display:
+      position:
+        x: 540
+        y: 160
+    id: join
     node_config:
       template: 'Bulk flow 3: :var[in.output]'
     type: CombineTextV2
-  - id: out
+  - display:
+      position:
+        x: 960
+        y: 160
+    id: out
     node_config:
       label: Result
       value: :var[join.text_output]

@@ -13,12 +13,20 @@ spec:
     target: out
   flow_version: v2
   nodes:
-  - id: mail
+  - display:
+      position:
+        x: 120
+        y: 160
+    id: mail
     node_config:
       connection: d62caa3b-b46b-473b-a6c9-1aab145f08a4
       read_count: 1
     type: GmailReadEmailsV5
-  - id: out
+  - display:
+      position:
+        x: 540
+        y: 160
+    id: out
     node_config:
       label: Latest mail
       value: :var[mail.subject]

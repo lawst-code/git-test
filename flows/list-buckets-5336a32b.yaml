@@ -13,11 +13,19 @@ spec:
     target: out
   flow_version: v2
   nodes:
-  - id: s3
+  - display:
+      position:
+        x: 120
+        y: 160
+    id: s3
     node_config:
       connection: 91e28329-59d9-4f7c-8e32-f2937b6f7ada
     type: AwsS3ListBucketsV2
-  - id: out
+  - display:
+      position:
+        x: 540
+        y: 160
+    id: out
     node_config:
       label: Result v2
       value: :var[s3.buckets]
